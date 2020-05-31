@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { render } from 'react-dom';
 'use strict';
 
 const Title = styled.h1`
@@ -7,25 +8,31 @@ const Title = styled.h1`
     color: palevioletred;
 `;
 
-const Wrapper = styled.section`
-    padding: 4em;
-    background: papayawhip;
-`;
+// const Wrapper = styled.section`
+//     padding: 4em;
+//     background: papayawhip;
+// `;
 
-function Test(props) {
+// function Test(props) {
     
-    return (
-    <Wrapper>
-        <Title>
-            Hello World!
-        </Title>
-    </Wrapper>
-    );
-}
+//     return (
+//     <Wrapper>
+//         <Title>
+//             Hello World!
+//         </Title>
+//     </Wrapper>
+//     );
+// }
 
-let domContainer = document.querySelector('#root');
-ReactDOM.render(<Test/>, domContainer);
+render(
+    <div>
+        Hello World!
+    </div>
+);
 
+// let domContainer = document.querySelector('#root');
+// ReactDOM.render(<Test/>, domContainer);
+// ReactDOM.render(<Title>Hello, world!</Title>, domContainer);
 
 // ReactDOM.render(
 //     <Test/>, document.getElementById('root')

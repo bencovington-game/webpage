@@ -1,30 +1,38 @@
-var _templateObject = _taggedTemplateLiteral(['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n'], ['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    padding: 4em;\n    background: papayawhip;\n'], ['\n    padding: 4em;\n    background: papayawhip;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n'], ['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 import styled from 'styled-components';
+import { render } from 'react-dom';
 'use strict';
 
 var Title = styled.h1(_templateObject);
 
-var Wrapper = styled.section(_templateObject2);
+// const Wrapper = styled.section`
+//     padding: 4em;
+//     background: papayawhip;
+// `;
 
-function Test(props) {
+// function Test(props) {
 
-    return React.createElement(
-        Wrapper,
-        null,
-        React.createElement(
-            Title,
-            null,
-            'Hello World!'
-        )
-    );
-}
+//     return (
+//     <Wrapper>
+//         <Title>
+//             Hello World!
+//         </Title>
+//     </Wrapper>
+//     );
+// }
 
-var domContainer = document.querySelector('#root');
-ReactDOM.render(React.createElement(Test, null), domContainer);
+render(React.createElement(
+    'div',
+    null,
+    'Hello World!'
+));
+
+// let domContainer = document.querySelector('#root');
+// ReactDOM.render(<Test/>, domContainer);
+// ReactDOM.render(<Title>Hello, world!</Title>, domContainer);
 
 // ReactDOM.render(
 //     <Test/>, document.getElementById('root')
