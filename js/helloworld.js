@@ -1,45 +1,30 @@
-'use strict';
-
-var _templateObject = _taggedTemplateLiteral(['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n'], ['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n'], ['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    padding: 4em;\n    background: papayawhip;\n'], ['\n    padding: 4em;\n    background: papayawhip;\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Title = window.styled.h1(_templateObject);
+import styled from 'styled-components';
+'use strict';
 
-ReactDOM.render(React.createElement(
-    Title,
-    null,
-    'Hello, World!'
-), document.getElementById('root'));
+var Title = styled.h1(_templateObject);
 
-// import styled from 'styled-components';
-// 'use strict';
+var Wrapper = styled.section(_templateObject2);
 
-// const Title = styled.h1`
-//     font-size: 1.5em;
-//     text-align: center;
-//     color: palevioletred;
-// `;
+function Test(props) {
 
-// const Wrapper = styled.section`
-//     padding: 4em;
-//     background: papayawhip;
-// `;
+    return React.createElement(
+        Wrapper,
+        null,
+        React.createElement(
+            Title,
+            null,
+            'Hello World!'
+        )
+    );
+}
 
-// function Test(props) {
-
-//     return (
-//     <Wrapper>
-//         <Title>
-//             Hello World!
-//         </Title>
-//     </Wrapper>
-//     );
-// }
-
-// let domContainer = document.getElementById('root');
-// ReactDOM.render(<Test/>, domContainer);
-
+var domContainer = document.querySelector('#root');
+ReactDOM.render(React.createElement(Test, null), domContainer);
 
 // ReactDOM.render(
 //     <Test/>, document.getElementById('root')
