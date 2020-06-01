@@ -1,6 +1,7 @@
 'use strict';
+// import React, {Component} from 'react';
 
-class LikeButton extends React.Component {
+class LikeButton extends Component {
   constructor(props) {
     super(props);
     this.state = { liked: false };
@@ -19,5 +20,7 @@ class LikeButton extends React.Component {
   }
 }
 
-let domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(<LikeButton />, domContainer);
+export default LikeButton;
+
+// let domContainer = document.querySelector('#like_button_container');
+// ReactDOM.render(<LikeButton />, domContainer);

@@ -6,20 +6,19 @@
     <body>
     <!-- allows for Javascript from JSX to be used -->
     <script type="text/babel"></script>
+    <div id="root"></div>
+
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <!-- <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> -->
-
+    <!-- Note: because we are using the online package thing we do not need to import functions -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-is@16.13.1/umd/react-is.production.min.js" crossorigin></script>
+    <!-- style-components -->
+    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
     <!-- Load our React component. -->
-    <!-- <div id="like_button_container"></div>
-    <div id="root"></div>
-    <script src="./JS/helloworld.js"></script>
-    <script src="./JS/like_button.js"></script> -->
-    <!-- <script type="module" src="helloworld.js"></script> -->
-
-    <div id="like_button_container"></div>
-    <script type="module" src="./JS/index.js"></script>
-
+    <script src="./js/helloworld.js"></script>
     </body>
+    <footer>
+    </footer>
 </html>
