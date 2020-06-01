@@ -1,15 +1,16 @@
 'use strict';
 
-const Title = window.styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: palevioletred;
-`;
+var _templateObject = _taggedTemplateLiteral(['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n'], ['\n    font-size: 1.5em;\n    text-align: center;\n    color: palevioletred;\n']);
 
-ReactDOM.render(
-    <Title>Hello, World!</Title>,
-    document.getElementById('root')
-);
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Title = window.styled.h1(_templateObject);
+
+ReactDOM.render(React.createElement(
+    Title,
+    null,
+    'Hello, World!'
+), document.getElementById('root'));
 
 // import styled from 'styled-components';
 // 'use strict';
@@ -26,7 +27,7 @@ ReactDOM.render(
 // `;
 
 // function Test(props) {
-    
+
 //     return (
 //     <Wrapper>
 //         <Title>
