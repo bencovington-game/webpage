@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <!-- Imports all of the external packages -->
+    <div id="imports">
+        <!-- allows for Javascript from JSX to be used -->
+        <script type="text/babel"></script>
+
+        <!-- Load React. -->
+        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+        <!-- Note: because we are using the online package thing we do not need to import functions -->
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-is@16.13.1/umd/react-is.production.min.js" crossorigin></script>
+
+        <!-- style-components -->
+        <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
+    </div>
+
+    <!-- Link the stylesheet to the index -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- The start of the header -->
+    <head></head>
+    
+    <!-- The start of the body -->
+    <body>
+
+        <script src="./js/setup.js"></script>
+
+        <div id="slides">
+            <script class="slide" id="1" src="./js/bio.js"></script>
+            <script class="slide" id="2" src="./js/home.js"></script>
+            <script class="slide" id="3" src="./js/healthStart.js"></script>
+        </div>
+
+        <!-- Root where React components are rendered -->
+        <div id="frame">
+            <script src="./js/slider.js"></script>
+        </div>
+    </body>
+    
+    <!-- The start of the footer -->
+    <footer></footer>
+
+</html>
