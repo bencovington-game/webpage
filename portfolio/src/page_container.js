@@ -1,32 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const pages = [
+    "Page 1",
+    "Page 2",
+    "Page 3"
+];
 
-const pages = ["page 1", "page 2", "page 3"];
-
+const imgs = [
+    "https://tinyurl.com/y8xvufmm",
+    "https://tinyurl.com/y8xvufmm",
+    "https://tinyurl.com/y8xvufmm",
+];
 
 const Page = styled.div`
-    width: 80%;
-    height: 80vh;
+    display: block;
+    height: 90vh;
     background: #419be0;
-    text-align: center;
+
 `;
 
-export const Map = pages.map(p => <Page>{p}</Page>);
+const Text = styled.div`
+    display: flex; 
+    height: 100%;
+    border: solid black;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12vmin;
+`
 
+const map = pages.map(
+    (p, index) => 
+    <Page 
+        data-index={index}
+        key={index}>
+            <Text>
+                {p}
+            </Text>
+    </Page>
+);
 
-export default class PageContainer extends React.Component {
-    render() {
-        return (
-            <div>
-                {Map}
-            </div>
-        );
-    }
-    // render(){
-    //     // return () =>
-    //     //     // pages.forEach(p => <Page>{p}</Page>);
-    //     //     pages.map(p => <Page>{p}</Page>);
-    //     return (map)
-    // }
-}
+export default map;
