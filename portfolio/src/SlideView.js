@@ -15,8 +15,8 @@ function getImg(i){
     return(img)
 }
 
-export default class SlideView extends React.Component{
-    render(){    
+export default class SlideView extends React.Component {
+    render() {    
         const Style = styled.div`
             /* margin: 5vh 5vw 5vh 5vw; */
             top: 5%;
@@ -70,7 +70,7 @@ export default class SlideView extends React.Component{
             :hover{
                 width: 2.5vw;
                 filter: grayscale(0);
-            }
+            };
             /* border: solid black; */
         `
 
@@ -79,6 +79,7 @@ export default class SlideView extends React.Component{
             margin: 0px;
             /* background: red; */
             position: absolute;
+
         `
         const Dot = styled.ul`
             margin: 0px;
@@ -91,18 +92,20 @@ export default class SlideView extends React.Component{
             background: red;
             display: flex;
             justify-content: space-around;
+            & > .slick-active > ${Icon}{
+                width: 2.5vw;
+                filter: grayscale(0);
+            };
         `
         
         const settings = {
-            appendDots: dots =>(
+            appendDots: dots => (
                 <Dots>
                     <Dot>{dots}</Dot>
                 </Dots>
             ),
             customPaging: i => (
-                <div>
-                    <Icon src={getImg(i)} />
-                </div>
+                <Icon src={getImg(i)} />
             ),
             accessibility: true,
             slide: <Slide/>,
