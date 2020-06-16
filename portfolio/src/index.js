@@ -23,7 +23,7 @@ function Background(){
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Background/>
+    {/* <Background/> */}
     <SlideView/>
   </React.StrictMode>,
   document.getElementById('root')

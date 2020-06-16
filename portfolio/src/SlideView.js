@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import map from './page_container';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import Monstralia from './Monstralia.png'
 
 const imgs = [
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/768px-Flat_tick_icon.svg.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/768px-Flat_tick_icon.svg.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/768px-Flat_tick_icon.svg.png',
+    'https://drive.google.com/uc?id=1geiV1riN3qDFYC35GbTL-GwaU7_hCsVb',
+    'https://drive.google.com/uc?id=15hsdngexVWnj4--NCo8sxP2mNjxUsaHs',
+    Monstralia,
+    'https://drive.google.com/uc?id=1OjAS9WPTfNU7MuUmkvynY2OXSxChMUkb',
+    'https://drive.google.com/uc?id=1znvxnh14Ck4xeOX7nLkUfk1dtZnSagdb',
 ];
 
 function getImg(i){
@@ -17,19 +20,28 @@ function getImg(i){
 
 export default class SlideView extends React.Component {
     render() {    
-        const Style = styled.div`
+        const Div = styled.div`
+            --slate: #333;
+            *:focus{
+                outline: none;
+            }
+        `
+        const SlideStyle = styled(Div)`
             /* margin: 5vh 5vw 5vh 5vw; */
-            top: 5%;
-            left: 5%;
+            top: 10%;
+            left: 10%;
             position: absolute;
-            background: salmon;
+            background: silver;
             display: block;
-            height: 90vh;
-            width: 90vw;
+            height: 80vh;
+            width: 80vw;
             padding: 0;
+            border-radius: 2.5vmin;
+            box-shadow: 0px 0px 5vmin var(--slate);
         `;
-        const Slide = styled.div``
-        const Arrow = styled.div`
+        const Slide = styled(Div)``
+        const Arrow = styled(Div)`
+            position: relative;
             height: 5%;
             width: 2%;
             top: 50%;
@@ -37,39 +49,45 @@ export default class SlideView extends React.Component {
         const PrevArrow = styled(Arrow)`
             text-align: left;
             position: fixed;
-            left: 0;
+            left: 1%;
+            top: 50%;
             ::before{
                 font-size: 12vmin;
                 line-height: 0px;
-                color: black;
-                content: "‹";            
+                color: var(--slate);
+                content: "‹";           
+            };
+            :hover::before{
+                color: white;
+                background: var(--slate);
             }
         `        
         const NextArrow = styled(Arrow)`
             text-align: right;
             position: fixed;
-            right: 0;
+            right: 1%;
             ::before{
                 font-size: 12vmin;
                 line-height: 0px;
-                color: black;
+                color: var(--slate);
                 content: '›';
             }
         `
 
         const Icon = styled.img`
             display: inline-block;
-            background: green;
+            background: white;
             padding: 0px;
             margin: 0px;
             position: relative;
             left: -.85vw;
             width: 2.5vw;
             border-radius: 20%;
-            filter: grayscale(1);
+            box-shadow: 0px 0px 1vmin var(--slate);
+            filter: grayscale(1) invert(.2);
             :hover{
                 width: 2.5vw;
-                filter: grayscale(0);
+                filter: grayscale(0) invert(0);
             };
             /* border: solid black; */
         `
@@ -85,16 +103,17 @@ export default class SlideView extends React.Component {
             margin: 0px;
             padding: 0px;
             position: fixed;
-            width: 10%;
+            width: 15%;
             height: 4%;
-            top: .5%;
-            left: 45%;
-            background: red;
+            top: 2%;
+            left: 42.5%;
+            /* background: red; */
             display: flex;
             justify-content: space-around;
             & > .slick-active > ${Icon}{
-                width: 2.5vw;
-                filter: grayscale(0);
+                left: -1.1vw;
+                width: 3vw;
+                filter: grayscale(0) invert(0);
             };
         `
         
@@ -127,9 +146,9 @@ export default class SlideView extends React.Component {
             nextArrow: <NextArrow/>,
         }
         return (
-            <Style>
+            <SlideStyle>
                 <Slider {...settings}>{map}</Slider>
-            </Style>
+            </SlideStyle>
         )
     }
 }
