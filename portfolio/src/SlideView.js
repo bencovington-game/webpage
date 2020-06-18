@@ -1,149 +1,138 @@
-import React from 'react';
-import styled from 'styled-components';
-import Slider from 'react-slick';
-import map from './page_container';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import Monstralia from './Monstralia.png'
-
-const imgs = [
-    'https://drive.google.com/uc?id=1geiV1riN3qDFYC35GbTL-GwaU7_hCsVb',
-    'https://drive.google.com/uc?id=15hsdngexVWnj4--NCo8sxP2mNjxUsaHs',
-    Monstralia,
-    'https://drive.google.com/uc?id=1OjAS9WPTfNU7MuUmkvynY2OXSxChMUkb',
-    'https://drive.google.com/uc?id=1znvxnh14Ck4xeOX7nLkUfk1dtZnSagdb',
-];
-
-function getImg(i){
-    const img = imgs[i];
-    return(img)
-}
+import {React, styled, Slider, map, getImg} from './Library';
 
 export default class SlideView extends React.Component {
     render() {    
-        const Div = styled.div`
-            --slate: #333;
-            *:focus{
+        const Div = styled.div.attrs(props => ({}))`
+            *, *::before, *::after{
+                margin: 0px;
+                padding: 0px;
                 outline: none;
             }
+            /* *:focus{
+                outline: none;
+            } */
+            --slate: #333;
         `
         const SlideStyle = styled(Div)`
-            /* margin: 5vh 5vw 5vh 5vw; */
-            top: 10%;
-            left: 10%;
+            top: calc(50% - 80vh/2);
+            left: calc(50% - 80vw/2);
             position: absolute;
-            background: silver;
+            /* background: salmon; */
             display: block;
             height: 80vh;
             width: 80vw;
             padding: 0;
-            border-radius: 2.5vmin;
-            box-shadow: 0px 0px 5vmin var(--slate);
         `;
         const Slide = styled(Div)``
         const Arrow = styled(Div)`
-            position: relative;
-            height: 5%;
-            width: 2%;
-            top: 50%;
-        `;
-        const PrevArrow = styled(Arrow)`
-            text-align: left;
             position: fixed;
-            left: 1%;
+            height: 10%;
+            width: 5%;
             top: 50%;
-            ::before{
+            ::before {
                 font-size: 12vmin;
-                line-height: 0px;
-                color: var(--slate);
-                content: "‹";           
+                line-height: 15%;
+                position: fixed;
+                color: silver;
+                top: 50%;
             };
-            :hover::before{
-                color: white;
-                background: var(--slate);
-            }
-        `        
-        const NextArrow = styled(Arrow)`
-            text-align: right;
-            position: fixed;
-            right: 1%;
-            ::before{
-                font-size: 12vmin;
-                line-height: 0px;
-                color: var(--slate);
-                content: '›';
-            }
-        `
-
+            &.slick-prev {
+                left: 1vmin;
+                ::before {
+                    left: 0;
+                }
+            };
+            &.slick-next {
+                right: 1vmin;
+                ::before {
+                    right: 0;
+                }
+            };
+            :hover::before {
+                opacity: 1;
+            };
+        `;
         const Icon = styled.img`
             display: inline-block;
             background: white;
             padding: 0px;
             margin: 0px;
             position: relative;
-            left: -.85vw;
-            width: 2.5vw;
+            /* left: -.85vw; */
+            /* width: 80%; */
+            top: 1vmin;
+            height: 8vmin;
             border-radius: 20%;
             box-shadow: 0px 0px 1vmin var(--slate);
-            filter: grayscale(1) invert(.2);
+            filter: grayscale(1) invert(.3) opacity(.8) brightness(1.5);
             :hover{
-                width: 2.5vw;
-                filter: grayscale(0) invert(0);
+                /* width: 2.5vw; */
+                /* transform: translate(-50%, -50%); */
+                /* filter: grayscale(0) invert(0); */
+                filter: opacity(1);
             };
             /* border: solid black; */
         `
-
-        const Dots = styled.div`
-            /* display: grid; */
-            margin: 0px;
-            /* background: red; */
-            position: absolute;
-
-        `
-        const Dot = styled.ul`
+        const Dots = styled.ul`
             margin: 0px;
             padding: 0px;
             position: fixed;
-            width: 15%;
-            height: 4%;
-            top: 2%;
-            left: 42.5%;
+            left: 0;
+            top: 2vmin;
+            width: 100vw;
+            height: 10vmin;
+            /* top: 50%; */
+            /* left: calc(50% - 25%/2); */
             /* background: red; */
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            vertical-align: middle;
+            /* transform: translate(-50%, -50%); */
+            & > li {
+                /* background: yellow; */
+                height: 10vmin;
+                width: 10vmin;
+                margin: 1vmin, 0px, 1, 0px;
+                /* top: 12.5%; */
+                position: relative;
+                display: inline-block;
+                /* display: inline-block; */
+                /* vertical-align: middle;   */
+            }
+            & > .slick-active{
+                /* top: 3.5%; */
+            }
             & > .slick-active > ${Icon}{
-                left: -1.1vw;
-                width: 3vw;
-                filter: grayscale(0) invert(0);
+                /* left: -1.1vw; */
+                /* width: 100%; */
+                height: 10vmin;
+                top: 0vmin;
+                filter: opacity(1);
             };
         `
-        
         const settings = {
             appendDots: dots => (
-                <Dots>
-                    <Dot>{dots}</Dot>
-                </Dots>
+                <Dots>{dots}</Dots>
             ),
             customPaging: i => (
-                <Icon src={getImg(i)} />
+                <Icon src={getImg(i)}/>
             ),
             accessibility: true,
             slide: <Slide/>,
-            speed: 250,
+            speed: 750,
             slidesToShow: 1,
             slidesToScroll: 1,
             touchThreshold: 10,
             focusOnSelect: true,
-            easing: 'ease',
             centerPadding: '0px',
             centerMode: true,
-            // swipeToSlide: true,
             initialSlide: 1,
             infinite: true,
             dots: true,
             dotsClass: "slick-dots",
             arrows: true,
-            prevArrow: <PrevArrow/>,
-            nextArrow: <NextArrow/>,
+            prevArrow: <Arrow/>,
+            nextArrow: <Arrow/>,
         }
         return (
             <SlideStyle>

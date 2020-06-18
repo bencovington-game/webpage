@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import {React, styled} from './Library';
+import Monstralia from './Monstralia.png'
 
 const pages = [
     "Bio",
@@ -10,13 +10,21 @@ const pages = [
 ];
 
 const imgs = [
-    "https://tinyurl.com/y8xvufmm",
-    "https://tinyurl.com/y8xvufmm",
-    "https://tinyurl.com/y8xvufmm",
+    'https://drive.google.com/uc?id=1geiV1riN3qDFYC35GbTL-GwaU7_hCsVb',
+    'https://drive.google.com/uc?id=15hsdngexVWnj4--NCo8sxP2mNjxUsaHs',
+    Monstralia,
+    'https://drive.google.com/uc?id=1OjAS9WPTfNU7MuUmkvynY2OXSxChMUkb',
+    'https://drive.google.com/uc?id=1znvxnh14Ck4xeOX7nLkUfk1dtZnSagdb',
 ];
+
+function getImg(i){
+    const img = imgs[i];
+    return(img)
+}
 
 const Page = styled.div`
     display: block;
+    /* height: 80vh; */
     height: 80vh;
     /* background: silver; */
 `;
@@ -43,4 +51,4 @@ const map = pages.map(
     </Page>
 );
 
-export default map;
+export {map, getImg};
