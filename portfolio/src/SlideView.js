@@ -8,9 +8,6 @@ export default class SlideView extends React.Component {
                 padding: 0px;
                 outline: none;
             }
-            /* *:focus{
-                outline: none;
-            } */
             --slate: #333;
         `
         const SlideStyle = styled(Div)`
