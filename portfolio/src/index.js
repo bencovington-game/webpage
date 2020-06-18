@@ -17,7 +17,7 @@ import background from './background.svg';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Background/> */}
     <SlideView/>
   </React.StrictMode>,
