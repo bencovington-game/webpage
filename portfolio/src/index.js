@@ -1,8 +1,8 @@
-import{React, ReactDOM, App, serviceWorker, SlideView, styled} from './Library';
+import{React, ReactDOM, App, serviceWorker, SlideView, styled, Home, home} from './Library';
 import './index.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import background from './background.svg';
+// import background from './background.svg';
 
 // function Background(){
 //   const Style = styled.img`
@@ -20,6 +20,7 @@ ReactDOM.render(
     {/* <App /> */}
     {/* <Background/> */}
     <SlideView/>
+    {/* <Home/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
