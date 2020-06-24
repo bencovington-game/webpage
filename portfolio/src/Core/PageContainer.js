@@ -1,27 +1,18 @@
 import {React, styled} from '../Library';
-import Monstralia from './Monstralia.png'
-import Home from '../Pages/Home'
-
-// const pages = [
-//     "Bio",
-//     "Home",
-//     "Monstralia",
-//     "RogueLike One",
-//     "Suit Yourself"
-// ];
+import {Bio, Home, Monstralia, RoguelikeOne, SuitYourself} from '../Pages/Pages'
 
 const pages = [
+    Bio,
     Home,
-    Home,
-    Home,
-    Home,
-    Home
+    Monstralia.Page,
+    RoguelikeOne,
+    SuitYourself,
 ];
 
 const imgs = [
     'https://drive.google.com/uc?id=1geiV1riN3qDFYC35GbTL-GwaU7_hCsVb',
     'https://drive.google.com/uc?id=15hsdngexVWnj4--NCo8sxP2mNjxUsaHs',
-    Monstralia,
+    Monstralia.Icon,
     'https://drive.google.com/uc?id=1OjAS9WPTfNU7MuUmkvynY2OXSxChMUkb',
     'https://drive.google.com/uc?id=1znvxnh14Ck4xeOX7nLkUfk1dtZnSagdb',
 ];
@@ -78,10 +69,11 @@ function test(e){
 }
 
 const map = containers.map(
-    (p, index) => 
-    <Page data-index={index} key={index}>
-        <Text><p.page/></Text>
-    </Page>
+    (p, index) =>
+    <p.page/> 
+    // <Page data-index={index} key={index}>
+    //     <Text><p.page/></Text>
+    // </Page>
 )
 
 export {map, getImg};

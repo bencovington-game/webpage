@@ -8,7 +8,8 @@ import SlideView from './Core/SlideView';
 import {map, getImg} from './Core/PageContainer';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Design, Programming, Production, Modeling} from './Core/tags'
-import Home from './Pages/Home';
+import {Bio, Home, Monstralia, RoguelikeOne, SuitYourself} from './Pages/Pages';
+
 
 export{
     React,
@@ -21,5 +22,5 @@ export{
     map, getImg,
     FontAwesomeIcon,
     Design, Programming, Production, Modeling,
-    Home, 
+    Bio, Home, Monstralia, RoguelikeOne, SuitYourself,
 };

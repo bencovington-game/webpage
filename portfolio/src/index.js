@@ -1,4 +1,4 @@
-import{React, ReactDOM, App, serviceWorker, SlideView, styled, Home, home} from './Library';
+import{React, ReactDOM, App, serviceWorker, SlideView, styled, Home} from './Library';
 import './index.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
