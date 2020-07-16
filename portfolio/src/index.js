@@ -1,26 +1,15 @@
-import{React, ReactDOM, App, serviceWorker, SlideView, styled, Home} from './Library';
+import{React, ReactDOM, App, serviceWorker, SlideView, styled, Pages} from './Core/Library';
 import './index.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import background from './background.svg';
 
-// function Background(){
-//   const Style = styled.img`
-//     /* width: 100%; */
-//     filter: opacity(10%);
-//     background-repeat: repeat;
-//   `
-//   return(
-//     <Style src={background}/>
-//   )
-// }
+const TestPage = Pages[0].Page;
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    {/* <Background/> */}
     <SlideView/>
-    {/* <Home/> */}
+    {/* <TestPage/> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
