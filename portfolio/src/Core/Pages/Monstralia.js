@@ -1,12 +1,20 @@
-import {React, styled, PageStyle, Heading} from '../Library'
+import {React, styled, PageStyles} from '../Library'
 import Icon from '../Images/Monstralia.png';
 
 const Title = "Monstralia";
 const Page = () => {
     return(
-        <PageStyle>
-            <Heading>Monstralia</Heading>
-        </PageStyle>
+        <PageStyles.PageStyle>
+            <PageStyles.Heading>Monstralia</PageStyles.Heading>
+            <PageStyles.SubHeading>About the Game</PageStyles.SubHeading>
+            <PageStyles.Paragraph></PageStyles.Paragraph>
+            <PageStyles.SubHeading>My Contributions</PageStyles.SubHeading>
+            <PageStyles.BulletedList>
+                <PageStyles.Bullet></PageStyles.Bullet>
+                <PageStyles.Bullet></PageStyles.Bullet>
+                <PageStyles.Bullet></PageStyles.Bullet>
+            </PageStyles.BulletedList>
+        </PageStyles.PageStyle>
     )
 }
 

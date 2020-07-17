@@ -1,6 +1,5 @@
 import{React, styled} from '../Library'
 import Bio from '../Images/RIFT_Icon.png'
-export {PageStyle, Heading, Paragraph, Image, Tag};
 
 const PageStyle = styled.div`
     margin: 0;
@@ -8,7 +7,7 @@ const PageStyle = styled.div`
     text-align: center;
     display: grid; 
     height: 80vh;
-    border: solid black;
+    /* border: solid black; */
     justify-content: center;
     align-items: center;
     font-weight: bold;
@@ -16,10 +15,13 @@ const PageStyle = styled.div`
     color: #555;
 `
 const Heading = styled.h1``
+const SubHeading = styled.h3``
 const Paragraph = styled.p`
     width: 80%;
     margin: auto;
 `
+const BulletedList = styled.ul``
+const Bullet = styled.li``
 const images = {
     "BioIcon" : Bio,
 }
@@ -36,7 +38,27 @@ const Image = props => {
         height = {Height ?? "100px"}
     />)
 };
-const CotactIcons = styled.div``
+const ContactList = styled.div`
+    height: 1vh;
+    /* background: salmon; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+const ContactLink = styled.a`
+    text-decoration: none;
+    margin: .5vh;
+    background: #555;
+    width: 5vh;
+    height: 5vh;
+    color: white;
+    border-radius: 100%;
+    font-size: 2.5vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+`
+const Link = styled.a`` 
 const StyleTag = styled.span`
     background: ${props => props.background};
     padding: 0rem .5rem;
@@ -59,4 +81,18 @@ const Tag = (props) => {
             {tag.content}
         </StyleTag>
     )
+};
+
+export {
+    PageStyle,
+    Heading,
+    SubHeading, 
+    Paragraph,
+    BulletedList,
+    Bullet, 
+    Image, 
+    Tag,
+    ContactList,
+    ContactLink,
+    Link,
 };
